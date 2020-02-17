@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{font-family:Verdana,sans-serif;}
+            .main_container{margin-left:-8px;margin-top:-8px;margin-right:-8.4px;}
+            #main_container{background-color:none;color:#42B5F5;}
+                .head_container{padding-right:7px;height:70px;position:fixed;border:1px solid #d3d3d3;box-shadow:-2px -1px 8px black;}
+                #head_container{background-color:white;}
+                    .logo{height:100%;width:185px;background-image:url('static/logo.png');background-size:70px;background-repeat:no-repeat;margin-left:120px;margin-top:18px;}
+                    .list{margin-left:680px;margin-top:-80px;width:700px;border:black;padding-left:-9px}
+                    li{font-size:18px;display:inline;padding:15px;}
+                .second_container{padding-top:130px;background-color:none;}
+                    .buttton{margin-right:1131px;padding-bottom:250px;background-color:#f5f5f5;}
+                        .but1{height:50px;width:200px;font-size:20px:border:none;background-color:#8DEDFD;border-radius:5px;margin-left:13px;margin-top:7px;}
+                        .but2{margin-top:20px;height:50px;width:200px;font-size:20px:border:none;background-color:#8DEDFD;border-radius:5px;margin-left:13px;margin-top:7px;}
+                        .but3{margin-top:20px;height:50px;width:200px;font-size:20px:border:none;background-color:#8DEDFD;border-radius:5px;margin-left:13px;margin-top:7px;}
+                    .slideshow-container{margin-top:-423px;margin-left:375px;margin-right:150px;}
+                        .mySlides{display:none;}
+                .fourth_container{background-color:#212121;margin-top:200px;padding-top:400px;}
+                    .fourth_one{margin-top:-300px;padding-left:100px;margin-right:50%;font-family:Georgia,serif;}
+                        .fourth_one_two{align=center;background-color:white;width:330px;margin-top:20px}
+                            .fourth_one_two_one{margin-left:18px;border:none;height:50px;width:250px;}
+                            .but4{align=center;height:50px;width:57px;font-style:bold;background-color:brown;border:none;}
+                    .fourth_two{margin-top:-170px;margin-left:50%;font-family:Georgia,serif;}
+                        .fourth_two_one{border-left:1px solid black}
+                            .our{margin-left:10px;color:white;}
+                        .fourth_two_two{border-left:1px solid black;}
+                            .fourth_two_two_one{margin-left:10px;padding-right:90px;text-align:justify;}
+                                .our1{color:gray;}
+                    .fourth_three{margin-top:200px;}
+                        .fourth_three_one{border-top:1px solid black;margin-left:50px;margin-right:50px;margin-top:200px;padding-bottom:20px;}
+                            .fourth_three_one_one{margin-top:15px;}
+                                .bot{color:gray;}
+                            .fourth_three_one_two{margin-top:-18px;margin-left:1200px;}
+                                .fourth_three_one_two_two{margin-top:-26px;margin-left:-75px;}
+                                .fourth_three_one_two_three{margin-top:-25px;margin-left:-40px;}
+                    .third_container{background-color:black;}
+    </style>
+</head>
+<body>
+    <div class="main_container" id="main_container">
+        <div class="head_container" id="head_container">
+            <div class="logo"></div>
+            <div class="list">
+                <ul>
+                    <a style="text-decoration:none;color:black;" href="index.html"><li> Home </li></a>
+                    <a style="text-decoration:none;color:black;" href="about.html"><li> About</li></a>
+                    <a style="text-decoration:none;color:black;" href="contact.html"><li>Contact</li></a>
+                    <a style="text-decoration:none;color:black;" href="help.html"><li> Help</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="second_container">
+            <div class="buttton">
+                <a href="tp.html"><input type="button" class="but1" value="Take Picture"></a>
+                <a href="upload.html"><input type="button" class="but2" value="Upload"/></a>
+                <a href="example.html"><input type="button" class="but3" value="Example"/></a>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="{{ url_for('static', filename = 'sk.jpg') }}" style="width:93.3%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="{{ url_for('static', filename = 'logo.png') }}" style="width:97%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="{{ url_for('static', filename = 'if.png') }}" style="width:97%">
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <script>
+            var slideIndex = 0;
+            showSlides();
+            function showSlides()
+            {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++)
+                {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}
+                for (i = 0; i < dots.length; i++)
+                {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+        <div class="third_container">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="fourth_container">
+            <div class="fourth_one">
+                <font size="5" style="color:white">Sign Up For Our Newsletter</font>
+                <br>
+                <div class="fourth_one_two">
+                    <input class="fourth_one_two_one" type="text" placeholder="Enter Email Address" style="font-style:italic">
+                    <a class="nav-link" href="six.html"><input style="color:white;font-weight:700" type="button" class="but4" value="GO >"></a>
+                </div>
+                <br>
+                <font size="1" style="color:gray;font-style:italic">Joint the conversation. Sign up to receive emails for events,<br>specials, tips, and general info.</font>
+            </div>
+            <div class="fourth_two">
+                <div class="fourth_two_one">
+                    <font class="our" size="2">Our Services:</font>
+                </div>
+                <br>
+                <div class="fourth_two_two">
+                    <div class="fourth_two_two_one">
+                        <font class="our1" size="2">SKI is a platform allowing users to automatically convert hand drawn design into digital designs and code. A user can create a project and upload a picture of a hand drawn mockup. SKI technology will create the code and the possibility to download the design to Sketch.</font>
+                    </div>
+                </div>
+            </div>
+            <div class="fourth_three">
+                <div class="fourth_three_one">
+                    <div class="fourth_three_one_one">
+                        <font class="bot" size="2">&copy; Copyright 2020</font>
+                    </div>
+                    <div class="fourth_three_one_two">
+                        <div class="fourth_three_one_two_one">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'twitter.png') }}" style="width:45%"></a>
+                        </div>
+                        <div class="fourth_three_one_two_two">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'fb.png') }}" style="width:17%"></a>
+                        </div>
+                        <div class="fourth_three_one_two_three">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'gmail.png') }}" style="width:30%"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

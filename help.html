@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{font-family:Verdana,sans-serif;}
+        .main_container{margin-left:-8px;margin-top:-8px;margin-right:-8.4px;}
+            #main_container{background-color:none;color:#42B5F5;}
+                .head_container{padding-right:7px;height:70px;position:fixed;border:1px solid #d3d3d3;box-shadow:-2px -1px 8px black;}
+                #head_container{background-color:white;}
+                    .logo{height:100%;width:185px;background-image:url('static/logo.png');background-size:70px;background-repeat:no-repeat;margin-left:120px;margin-top:18px;}
+                    .list{margin-left:680px;margin-top:-80px;width:700px;border:black;padding-left:-9px}
+                    li{font-size:18px;display:inline;padding:15px;}
+            .vid_container{padding-top:100px;padding-left:30px;border:none;}
+		    .fourth_container{background-color:#212121;}
+                .fourth_three{margin-top:200px;}
+                        .fourth_three_one{border-top:1px solid black;margin-left:50px;margin-right:50px;margin-top:200px;padding-bottom:20px;}
+                            .fourth_three_one_one{margin-top:15px;}
+                                .bot{color:gray;}
+                            .fourth_three_one_two{margin-top:-18px;margin-left:1200px;}
+                                .fourth_three_one_two_two{margin-top:-26px;margin-left:-75px;}
+                                .fourth_three_one_two_three{margin-top:-25px;margin-left:-40px;}
+    </style>
+</head>
+<body>
+    <div class="main_container" id="colors" >
+        <div class="head_container" id="head_container">
+            <div class="logo"></div>
+            <div class="list">
+                <ul>
+                    <a style="text-decoration:none;color:black;" href="index.html"><li> Home </li></a>
+                    <a style="text-decoration:none;color:black;" href="about.html"><li> About</li></a>
+                    <a style="text-decoration:none;color:black;" href="contact.html"><li>Contact</li></a>
+                    <a style="text-decoration:none;color:black;" href="help.html"><li> Help</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="vid_container">
+            <video width="1305" height="400" controls>
+                <source src="{{ url_for('static', filename = 'capstone.mp4') }}" type="Video/mp4">
+            </video>
+        </div>
+        <div class="fourth_container">
+            <div class="fourth_three">
+                <div class="fourth_three_one">
+                    <div class="fourth_three_one_one">
+                        <font class="bot" size="2">&copy; Copyright 2020</font>
+                    </div>
+                    <div class="fourth_three_one_two">
+                        <div class="fourth_three_one_two_one">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'twitter.png') }}" style="width:45%"></a>
+                        </div>
+                        <div class="fourth_three_one_two_two">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'fb.png') }}" style="width:17%"></a>
+                        </div>
+                        <div class="fourth_three_one_two_three">
+                            <a href="a.html"><img src="{{ url_for('static', filename = 'gmail.png') }}" style="width:30%"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
